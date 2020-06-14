@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Author: douglasproglima, Illustrator: douglasproglima, Category: ES6">
+    <meta charset="utf-8" />
+    <meta content="douglasproglima, Douglas Lima, リマ, リマドウグラス" name="keywords">
+    <meta content="Full Stack Developer at Okazaki - 岡崎市" name="description">
+    <meta http-equiv="Content-Language" content="pt-br">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="index, follow">
+    <meta name="google-site-verification" content="GeujA1Og033_qKUv-9UwUfbaYRpGMKU0NSs8T1wxVaY" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <style>
+        body {
+            margin: 0;
+            color: #6a6f8c;
+            /* background: #000000d2; */
+            font: 600 16px/18px 'Open Sans', sans-serif;
+            box-shadow: 0 12px 15px 0 rgba(56, 30, 202, 0.37), 0 17px 50px 0 rgba(0, 0, 0, .19);
+            background: url(https://raw.githubusercontent.com/douglasproglima/images/master/backgroud-login.jpg) center;
+        }
+
+        *,
+        :after,
+        :before {
+            box-sizing: border-box
+        }
+
+        .clearfix:after,
+        .clearfix:before {
+            content: '';
+            display: table
+        }
+
+        .clearfix:after {
+            clear: both;
+            display: block
+        }
+
+        a {
+            color: #000;
+            text-decoration: dashed
+        }
+
+        a :houver {
+            color: #b317a68e;
+        }
+
+        .login-wrap {
+            width: 100%;
+            margin: auto;
+            max-width: 525px;
+            min-height: 670px;
+            position: relative;
+            background: url(https://raw.githubusercontent.com/douglasproglima/images/master/backgroud.png) no-repeat center;
+            box-shadow: 0 12px 15px 0 rgba(56, 30, 202, 0.37), 0 17px 50px 0 rgba(0, 0, 0, .19);
+        }
+
+        .login-html {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            padding: 90px 70px 50px 70px;
+            background: rgb(105, 173, 246);
+            /* background: rgba(102, 34, 228, 0.185); */
+        }
+
+        .login-html .sign-in-htm,
+        .login-html .sign-up-htm {
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            position: absolute;
+            transform: rotateY(180deg);
+            backface-visibility: hidden;
+            transition: all .4s linear;
+        }
+
+        .login-html .sign-in,
+        .login-html .sign-up,
+        .login-form .group .check{
+            display:none;
+        }
+
+        .login-html .tab,
+        .login-form .group .label,
+        .login-form .group .button {
+            text-transform: uppercase;
+        }
+
+        .login-html .tab {
+            font-size: 22px;
+            margin-right: 15px;
+            padding-bottom: 5px;
+            margin: 0 15px 10px 0;
+            display: inline-block;
+            border-bottom: 2px solid transparent;
+            color: #b317a6;
+        }
+
+        .login-html .sign-in:checked+.tab,
+        .login-html .sign-up:checked+.tab {
+            color: #fff;
+            border-color: #ffffff98;
+        }
+
+        .login-form {
+            min-height: 345px;
+            position: relative;
+            perspective: 1000px;
+            transform-style: preserve-3d;
+        }
+
+        .login-form .group {
+            margin-bottom: 15px;
+        }
+
+        .login-form .group .label,
+        .login-form .group .input,
+        .login-form .group .button {
+            width: 100%;
+            color: rgb(12, 12, 12);
+            display: block;
+        }
+
+        .login-form .group .input,
+        .login-form .group .button {
+            border: none;
+            padding: 15px 20px;
+            border-radius: 25px;
+            background: rgb(255, 255, 255);
+        }
+
+        .login-form .group input[data-type="password"] {
+            text-security: circle;
+            -webkit-text-security: circle;
+        }
+
+        .login-form .group .label {
+            color: #000;
+            font-size: 13px;
+        }
+
+        .login-form .group .button {
+            background: #b317a6;
+            font-weight: bold;
+        }
+
+        .login-form .group label .icon {
+            width: 15px;
+            height: 15px;
+            border-radius: 2px;
+            position: relative;
+            display: inline-block;
+            background: rgba(255, 255, 255, .1);
+        }
+
+        .login-form .group label .icon:before,
+        .login-form .group label .icon:after {
+            content: '';
+            width: 10px;
+            height: 2px;
+            background: #fff;
+            position: absolute;
+            transition: all .2s ease-in-out 0s;
+        }
+
+        .login-form .group label .icon:before {
+            left: 3px;
+            width: 5px;
+            bottom: 6px;
+            transform: scale(0) rotate(0);
+        }
+
+        .login-form .group label .icon:after {
+            top: 6px;
+            right: 0;
+            transform: scale(0) rotate(0);
+        }
+
+        .login-form .group .check:checked+label {
+            color: #fff;
+        }
+
+        .login-form .group .check:checked+label .icon {
+            background: #b317a6;
+        }
+
+        .login-form .group .check:checked+label .icon:before {
+            transform: scale(1) rotate(45deg);
+        }
+
+        .login-form .group .check:checked+label .icon:after {
+            transform: scale(1) rotate(-45deg);
+        }
+
+        .login-html .sign-in:checked+.tab+.sign-up+.tab+.login-form .sign-in-htm {
+            transform: rotate(0);
+        }
+
+        .login-html .sign-up:checked+.tab+.login-form .sign-up-htm {
+            transform: rotate(0);
+        }
+
+        .isAccount {
+            color: #b317a6;
+        }
+
+        .hr {
+            height: 2px;
+            margin: 60px 0 50px 0;
+            background: #b317a6b7;
+        }
+
+        .foot-lnk {
+            text-align: center;
+        }
+    </style>
+    <!-- for ios 7 style, multi-resolution icon of 152x152 -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-barstyle" content="black-translucent">
+    <link rel="apple-touch-icon" href="../assets/images/logo.png">
+    <meta name="apple-mobile-web-app-title" content="Agenda">
+    <!-- for Chrome on Android, multi-resolution icon of 196x196 -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <title>Recuperar Senha</title>
+    <!-- =======================================================
+       Nome do Tema: ProgLimaThemes
+       Dev Email: douglasproglima@gmail.com
+       Dev: Douglas Lima
+       License: https://bootstrapmade.com/license/
+     ======================================================= -->       
+</head>
+
+<body>
+
+    <div class="login-wrap">
+        <div class="login-html">
+
+            <%- include('includes/messages'); %>
+
+            <input id="tab-1" type="radio" name="tab" class="sign-in" checked>
+            <label for="tab-1" class="tab">Recuperar Conta</label>
+            
+            <input id="tab-2" type="radio" name="tab" class="sign-up">
+            <label for="tab-2" class="tab"></label>
+
+            <div class="login-form">
+                <div class="hr"></div>
+                <!-- <form class="frm-sign-in" action="/login/edit/<= user.email >" method="POST"> -->
+                <form class="frm-sign-in" action="/login/edit/<%= 'proglima@gmail.com' %>" method="POST">
+                <!-- <form class="frm-sign-in" action="/home" method="POST"> -->
+                    <input type="hidden" name="_csrf" value=<%= csrfToken %>>
+                    <div class="sign-in-htm">
+                        <div class="group">
+                            <label for="email" class="label">E-mail</label>
+                            <input id="email" name="email" type="email" class="input" required>
+                        </div>
+
+                        <div class="group">
+                            <label for="password" class="label">Senha</label >
+                            <input id="password" name="password" type="password" class="input" required>
+                        </div>
+                        
+                        <div class="group">
+                            <input type="submit" class="button" value="Recuperar Senha">
+                        </div>
+                        
+                    </div>
+                </form>
+                
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
+
+    <!-- Google  -->
+    <script src="/assets/js/google.min.js"></script>    
+    <script src="/assets/js/bundle.js"></script>
+</body>
+
+</html>

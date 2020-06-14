@@ -1,0 +1,62 @@
+<%- include('includes/head') %>
+<%- include('includes/nav') %>
+<main class="content">
+    <div class="content_inner">
+
+        <div class="md-lg-8 my-3">
+            <h1 class="text-center">Contato</h1>
+            <p class="text-center lead">Criar/Editar Contatos</p>
+
+            <%- include('includes/messages') %>
+
+            <% if(contact._id) { %>
+                <form class="needs-validation" novalidate action="/contact/edit/<%= contact._id %>" method="POST">
+            <% } else { %>
+                <form class="needs-validation" novalidate action="/contact/register" method="POST">
+            <% } %>
+            
+                <input type="hidden" name="_csrf" value=<%= csrfToken %>>
+
+                <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                        <label for="idName">Nome</label>
+                        <input value="<%= contact.name %>" id="idName" name="name" type="text" class="form-control"
+                            placeholder="Nome" required>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label for="idLastName">Sobrenome</label>
+                        <input value="<%= contact.lastName %>" id="idLastName" name="lastName" type="text"
+                            class="form-control" placeholder="Sobrenome" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                        <label for="idEmail">E-mail</label>
+                        <input value="<%= contact.email %>" id="idEmail" name="email" type="email" class="form-control"
+                            placeholder="E-mail" required>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label for="idPhoneNumber">Celuar</label>
+                        <input value="<%= contact.phoneNumber %>" id="idPhoneNumber" name="phoneNumber" type="tel"
+                            class="form-control" placeholder="Celular" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8 mb-3">
+                        <button class="btn btn-primary btn-lg btn-block" type="submit">Salvar</button>
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    </div>
+</main>
+<%- include('includes/footer') %>

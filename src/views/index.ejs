@@ -1,0 +1,22 @@
+<%- include('includes/head') %>
+<%- include('includes/nav') %>
+<main class="content">
+    <div class="content_inner">
+        <div class="col-lg-3"></div>
+
+        <div class="md-lg-8 my-3">
+            <h1 class="text-center">DASHBOARD</h1>
+            <p class="text-center lead">Agenda/Contatos</p>
+
+            <%- include('includes/messages') %>
+            
+                <canvas id="myChart" width="400" height="100" style="background: #37673c52;"></canvas>
+                <hr>
+                <canvas id="myChart2" class="chartjs-render-monitor" width="400" height="100" style="background: #37673c52;"></canvas>
+        </div>
+
+        <div class="col-lg-3">
+        </div>
+    </div>
+</main>       
+<%- include('includes/footer') %>

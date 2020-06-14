@@ -1,0 +1,48 @@
+<%- include('includes/head') %>
+<%- include('includes/nav') %>
+<main class="content">
+    <div class="content_inner">
+        <div class="col-lg-3"></div>
+
+        <div class="md-lg-12 my-4">
+            <h1 class="text-center">Agenda</h1>
+            
+            <% if(contacts.length <= 0) { %>
+                <p class="text-center lead">Nenhum registro encontrado.</p>
+            <% } else { %>
+                <p class="text-center lead">Seus contatos estão abaixo</p>
+                <%- include('includes/messages') %>
+                <div class="responsive-table">
+                    <table id="table_agenda" class="table table-sm table-striped table-hover" cellspacing="0" width="100%">
+                        <tr class="thead-dark">
+                            <th scope="col" class="th-sm">Nome</th>
+                            <th scope="col" class="th-sm">Sobrenome</th>
+                            <th scope="col" class="th-sm">E-mail</th>
+                            <th scope="col" class="th-sm">Telefone</th>
+                            <th scope="col" class="th-sm"></th>
+                        </tr>
+
+                        <% contacts.forEach(contact => { %>
+                            <tr>
+                                <td><%= contact.name %></td>
+                                <td><%= contact.lastName %></td>
+                                <td><%= contact.email %></td>
+                                <td><%= contact.phoneNumber %></td>
+                                <td>
+                                    <a href="/agenda/<%= contact._id %>" class="btn btn-info btn-sm btn-rounded"><i class="fa fa-edit"></i></a>
+                                    <a href="/agenda/delete/<%= contact._id %>" class="btn btn-danger btn-sm btn-rounded"><i class="fa fa-trash"></i></a>
+                                </td>
+                            </tr> 
+                        <% }); %>
+                    </table>
+                </div>
+            <% } %>
+
+        </div>
+
+        <div class="col-lg-3">
+        </div>
+    </div>
+</main>
+
+<%- include('includes/footer') %>

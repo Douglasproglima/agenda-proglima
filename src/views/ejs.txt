@@ -1,0 +1,13 @@
+<% controle de fluxo (if, for, while.....) %>
+    Exemplo de fluxo:
+    <% if(flag){ %>
+        <%= Exibe qualquer coisa IF %>
+    <% } else { %>
+        <%= Exibe qualquer coisa ELSE %>
+    <% } %>
+
+
+<%= Imprime escapando caracteres %>
+<%- Imprime sem escapar os caracteres %>
+<%# Comentário %>
+<%- include('caminho/arquivo'); %>
